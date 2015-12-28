@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Applied Job list</h1>
+
+<div class="container">          
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Url</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alluserjobs.each do |alluserjobs| %>
+      <tr>  
+      <% if alluserjobs.userid = current_user.id %>
+        <% @tmpJob = Job.where(:id => alluserjobs.jobid).first %>
+          <td><%= @tmpJob.company_name %></td>
+          <td><%= @tmpJob.url %></td>
+          <td><%= @tmpJob.job %></td>
+      <% end %> 
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+<br>
+

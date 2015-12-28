@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
+<% if current_user.role == "user" %>
+<%= link_to 'Show applied Jobs', userjobs_path,:class=>"waves-effect waves-light btn btn-primary blue darken-1 btn-center", method: :get %>
+<% end %>
 
 <h1>Listing Jobs</h1>
 
 <% if current_user.role == "admin" %>
 
+
 <%= link_to 'Create new Job alert', new_job_path,:class=>"waves-effect waves-light btn btn-primary blue darken-1 btn-center", method: :get %>
+
 <% end %>
+
 
 
 
@@ -30,10 +35,11 @@
         <td><%= job.job %></td>
         <td><%= job.age %></td>
         <td><%= job.qualification %></td>
-        <td><%= link_to 'Show', job %></td>
+     
+        <td><%= link_to 'Show', job , :class=>"glyphicon glyphicon-search btn btn-primary btn-xs",method: :get%></td>
         <% if current_user.role == "admin" %>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) ,:class=>" btn btn-warning btn-xs"%></td>
+        <td><%= link_to 'Destroy', job, :class=>" btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

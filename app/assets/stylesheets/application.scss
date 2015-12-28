@@ -18,6 +18,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+.navbar-default {
+    background-color: #9FF781;
+    border-color: #e7e7e7;
+}
+
 .container {
     width: 1000px;
 }

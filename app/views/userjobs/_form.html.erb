@@ -1,0 +1,14 @@
+<%= form_for Userjob.new do |f| %>
+  
+
+  <div class="field">
+  
+    
+   <%= hidden_field_tag 'post_id', @jobid.id %>
+    
+  </div>
+
+
+    <%= f.submit "Apply for job", class: "btn btn-blue btn-lg " %>
+
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :userjobs
   resources :jobs
   devise_for :users
   root to: "jobs#index"

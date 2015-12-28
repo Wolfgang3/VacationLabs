@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Applied Job list</h1>
+
+<table>
+  <thead>
+    <tr>
+	  <th>Company name</th>
+      <th>Url</th>
+      <th>Job</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alljobs.each do |jobs| %>
+      <tr>
+      <% if jobs.id = @joblist.jobid %>
+
+        <td><%= jobs.user_id %></td>
+        <td><%= jobs.sighting_id %></td>
+        <td><%= jobs.details %></td>
+      <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <strong>Jobid:</strong>
+  <%= @userjob.jobid %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @userjob.userid %>
+</p>
+
+<%= link_to 'Edit', edit_userjob_path(@userjob) %> |
+<%= link_to 'Back', userjobs_path %>
