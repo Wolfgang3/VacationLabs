@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+    before_filter :authenticate_user!, :only => [ :find,:edit,:index]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   # GET /jobs

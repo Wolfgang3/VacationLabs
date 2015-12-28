@@ -25,5 +25,8 @@
   <%= @job.qualification %>
 </p>
 
+<% if current_user.role == "admin" %>
 <%= link_to 'Edit', edit_job_path(@job) %> |
+<% end %>
 <%= link_to 'Back', jobs_path %>
+

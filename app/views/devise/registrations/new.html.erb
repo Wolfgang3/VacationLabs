@@ -36,6 +36,10 @@
         <%= f.select :role, [['user','user'],['admin','admin']] %>
   </div>
 
+  <div class="field">
+    Profile picture: <%= f.file_field :avatar %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
