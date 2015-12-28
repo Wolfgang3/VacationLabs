@@ -18,6 +18,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.menu{    width: 455px;
+}
 
 .navbar-default {
     background-color: #9FF781;
@@ -34,7 +36,7 @@
 
 #height-min{
 	min-height: 230px;
-	margin-top: 76px;
+	margin-top: 5px;
 }
 
   body {

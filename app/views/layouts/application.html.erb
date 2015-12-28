@@ -35,6 +35,8 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "HOME", jobs_path , class: "btn btn-link navbar-brand" , method: :get%>
+   
+
     </div>
 
 
@@ -42,25 +44,26 @@
   
       <ul class="nav navbar-nav navbar-right">
 
-      <% if !user_signed_in? %>
-      <li><%= link_to "Log In", new_user_session_path, class: "btn btn-link", method: :get%></li>
-      <li><%= link_to "Sign up", new_user_registration_path, class: "btn btn-link", method: :get%></li>
+        <% if !user_signed_in? %>
+          <li><%= link_to "Log In", new_user_session_path, class: "btn btn-link", method: :get%></li>
+          <li><%= link_to "Sign up", new_user_registration_path, class: "btn btn-link", method: :get%></li>
 
-      <% else %>
-       <li id="img-avatar">
-        <%= image_tag current_user.avatar.url(:thumb), class:"img-avatar" %>
-        </li>
-        <li ><a href="#">Welcome <%= current_user.name %></a></li>
+        <% else %>
+          
+          <li id="img-avatar">
+          <%= image_tag current_user.avatar.url(:thumb), class:"img-avatar" %>
+          </li>
+          <li ><a href="#">Welcome <%= current_user.name %></a></li>
 
-        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "edit your account", edit_user_registration_path , class: "btn btn-link"%></li>
-            <li><%= link_to "log out", destroy_user_session_path, :method => :delete %></li>     
-          </ul>
-        </li>
-        <% end %>
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "edit your account", edit_user_registration_path , class: "btn btn-link"%></li>
+              <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>     
+            </ul>
+          </li>
+          <% end %>
       </ul>
     </div>
   </div>
@@ -68,9 +71,8 @@
 <!-- -->
 
   <div id="height-min" class="row">
-  <div class="col-xs-4  col-md-2"></div>
   <div class="col-xs-10  col-md-8"><%= yield %></div>
-  <div class="col-xs-4  col-md-2"></div>
+  <div class="col-xs-4  col-md-4"></div>
   </div>
 
 </body>
