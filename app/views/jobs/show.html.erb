@@ -28,7 +28,11 @@
 <% if current_user.role == "admin" %>
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <% elsif current_user.role == "user" %>
-  <%= render('userjobs/form') %>
+  
+  <% if Userjob.where(:jobid => @jobid , :userid => current_user.id).count == 0  %>
+  
+    <%= render('userjobs/form') %>
+  <% end %>
 <% end %>
 <br>
 <%= link_to 'Back', jobs_path,:class=>"waves-effect waves-light btn btn-warning darken-1 ", method: :get %>
