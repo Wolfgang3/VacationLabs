@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @job.company_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @job.url %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @job.job %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @job.age %>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @job.qualification %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
