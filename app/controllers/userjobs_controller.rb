@@ -12,7 +12,8 @@ class UserjobsController < ApplicationController
   # GET /userjobs/1
   # GET /userjobs/1.json
   def show
- 
+   @alluserjobs = Userjob.all
+  @alljobs = Job.all
   end
 
   # GET /userjobs/new

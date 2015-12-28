@@ -2,18 +2,19 @@
 <%= link_to 'Show applied Jobs', userjobs_path,:class=>"waves-effect waves-light btn btn-primary blue darken-1 btn-center", method: :get %>
 <% end %>
 
-<h1>Listing Jobs</h1>
+
 
 <% if current_user.role == "admin" %>
 
-
+<%= link_to 'Show users who applied for Jobs', userjobs_path,:class=>"waves-effect waves-light btn btn-primary blue darken-1 btn-center", method: :get %>
+<br>
+<br>
 <%= link_to 'Create new Job alert', new_job_path,:class=>"waves-effect waves-light btn btn-primary blue darken-1 btn-center", method: :get %>
 
 <% end %>
 
 
-
-
+<h1>Listing Jobs</h1>
 <div class="container">          
   <table class="table table-striped">
   <thead>
